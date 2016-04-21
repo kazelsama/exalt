@@ -24,8 +24,11 @@
   },
   "homepage": "https://github.com/kazelsama/exalt#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "bootstrap-sass": "^3.3.6",
     "grunt": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.1.0",
     "load-grunt-tasks": "^3.5.0",
     "sass-tree": "kazelsama/sass-tree"

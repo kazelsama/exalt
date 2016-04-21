@@ -1,9 +1,15 @@
 
 @import "variables";
 
+@import "../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "animations";
+
 @import "lib/carousel";
 @import "lib/checkbox";
 @import "lib/menu";
 @import "lib/navigation";
 @import "lib/radio";
 @import "lib/tabs";
+
+@import "extends";

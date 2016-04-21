@@ -14,13 +14,27 @@ module.exports = function(grunt){
 			options:{
 				sourceMap:true
 			}
+		},
+		postcss:{
+			options:{
+				map:true,
+				processors:[
+					require('autoprefixer')({browsers:'last 2 versions'})
+				]
+			},
+			dist:{
+				src:'css/{,**/}*.css'
+			}
 		}
 	};
-	
-	grunt.initConfig(sassTree({
+
+	config = sassTree({
 		filesExtensions:['scss'],
-		gruntConfig:config
-	}));
+		gruntConfig:config,
+		tasks:['postcss']
+	});
+
+	grunt.initConfig(config);
 
 	grunt.registerTask('default',['sass']);
 

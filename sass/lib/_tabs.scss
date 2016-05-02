@@ -1,8 +1,6 @@
-[data-exalt="tabs"]{
+[data-exalt~="tabs"]{
 	.nav{
-		//@extend .nav-tabs;
 		> li{
-			//@extend li;
 			label{
 				@extend a;
 				cursor:pointer;
@@ -12,10 +10,18 @@
 		}
 	}
 	.tab-content{
-		//@extend .tab-content;
 		.tab-pane{
 
 		}
+	}
+	[data-exalt~="right"]{
+
+	}
+	[data-exalt~="bottom"]{
+
+	}
+	[data-exalt~="left"]{
+
 	}
 	@for $index from 1 through $tabs-limit {
 		input[type="radio"]:nth-child(#{$index}):checked{

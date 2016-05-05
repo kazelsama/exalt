@@ -1,16 +1,15 @@
 %fadein{
-	animation:fadein 0.15s linear;
+	animation:fadein $animation-fade-duration linear;
 	opacity:1;
 	visibility:visible;
 }
 %fadein2{
-	animation:fadein2 0.30s linear;
+	animation:fadein2 $animation-fade-duration*2 linear;
 	opacity:1;
 	visibility:visible;
 }
 %fadeout{
-	animation:fadeout 0.15s linear;
+	animation:fadeout $animation-fade-duration linear;
 	opacity:0;
 	visibility:hidden;
-	height:0;
 }

@@ -12,7 +12,7 @@
 
 <!--/global-variables-->
 
-<!--tabs-->
+<!--tabs
 
 <section data-exalt="tabs bottom">
 	<input class="exalt" type="radio" name="tabs" id="tab00" value="tab00" checked="checked"/>
@@ -60,6 +60,37 @@
 		</div>
 	</div>
 </section>
+
+/tabs-->
+
+<!--modal-->
+
+<label for="modal" class="btn btn-primary btn-lg">
+	Launch demo modal
+</label>
+
+<section data-exalt="modal">
+	<input type="checkbox" name="modal" id="modal" />
+	<label for="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="modalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</label>
+</section>
+
+<!--/tabs-->
 
 </body>
 </html>

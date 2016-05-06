@@ -38,7 +38,7 @@
 			}
 		}
 		@for $index from 1 through $tabs-limit{
-			input[type="radio"]:nth-child(#{$index}):checked{
+			[type="radio"]:nth-child(#{$index}):checked{
 				~ .nav{
 					> li{
 						&:nth-child(#{$index}){
@@ -72,7 +72,7 @@
 			}
 		}
 		@for $index from 1 through $tabs-limit{
-			input[type="radio"]:nth-child(#{$index}):checked{
+			[type="radio"]:nth-child(#{$index}):checked{
 				~ .nav{
 					> li{
 						&:nth-child(#{$index}){
@@ -111,7 +111,7 @@
 			}
 		}
 		@for $index from 1 through $tabs-limit{
-			input[type="radio"]:nth-child(#{$index}):checked{
+			[type="radio"]:nth-child(#{$index}):checked{
 				~ .nav{
 					> li{
 						&:nth-child(#{$index}){
@@ -130,7 +130,7 @@
 		}
 	}
 	@for $index from 1 through $tabs-limit{
-		input[type="radio"]:nth-child(#{$index}):checked{
+		[type="radio"]:nth-child(#{$index}):checked{
 			~ .nav{
 				> li{
 					&:nth-child(#{$index}){

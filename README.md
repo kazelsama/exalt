@@ -8,7 +8,7 @@ css library for exalt the css powers
 - [ ] carousel
 - [ ] checkbox
 - [ ] menu
-- [ ] modal
+- [ ] modal (75%)
 - [ ] navigation
 - [ ] radio
-- [x] tabs
+- [x] tabs (100%)

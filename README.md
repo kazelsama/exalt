@@ -4,7 +4,7 @@ css library for exalt the css powers
 ## versions
 
 [bootstrap](https://github.com/kazelsama/exalt/tree/bootstrap)
-- [ ] accordion
+- [x] accordion (100%)
 - [ ] carousel
 - [ ] checkbox
 - [ ] menu

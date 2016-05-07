@@ -1,0 +1,30 @@
+[data-exalt="accordion"]{
+	.panel-group{
+		.panel-title{
+			label{
+				@extend a;
+				font-weight:inherit;
+				margin:0;
+				&:hover{
+					color:inherit;
+				}
+			}
+		}
+		.panel-collapse{
+			display:none;
+		}
+	}
+	@for $index from 1 through $accordion-limit{
+		input.exalt:nth-child(#{$index}):checked{
+			~ .panel-group{
+				> .panel{
+					&:nth-child(#{$index}){
+						.panel-collapse{
+							display:block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

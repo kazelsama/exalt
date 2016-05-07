@@ -1,40 +1,53 @@
 [data-exalt~="modal"]{
-	.modal{
-		margin: 0;
-		width: auto;
-		border: 0;
-		background:transparent;
-		padding:0;
-		display:block;
+	dialog{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: auto;
 		visibility:hidden;
-		height:0;
-		position:fixed;
-		&.fade{
-			animation:fadeout .15s linear;
-			opacity:0;
-			.modal-dialog{
-				transition: transform .3s ease-out;
-				transform: translate(0,-25%);
+		border:0;
+		background:transparent;
+		width:auto;
+		height:auto;
+		padding:0;
+		margin:0;
+		display:block;
+		.modal{
+			position: absolute;
+			overflow: hidden;
+			bottom: auto;
+			display:block;
+			&.fade{
+				animation:fadeout .15s linear;
+				opacity:0;
+				.modal-dialog{
+					transition: transform .3s ease-out;
+					transform: translate(0,-25%);
+				}
 			}
-		}
-		.modal-backdrop{
-			opacity:0.5;
-			z-index:auto;
-			position:absolute;
-			margin:0;
-			height:400%;
+			.modal-backdrop{
+				opacity:0.5;
+				z-index:auto;
+				position:absolute;
+				margin:0;
+			}
 		}
 	}
 	[type="checkbox"]:checked{
-		~.modal{
+		~dialog{
 			visibility:visible;
-			height:auto;
-			overflow:auto;
-			&.fade{
-				animation:fadein .15s linear;
-				opacity:1;
-				.modal-dialog{
-					transform: translate(0,0);
+			.modal{
+				visibility:visible;
+				height:auto;
+				overflow:auto;
+				&.fade{
+					animation:fadein .15s linear;
+					opacity:1;
+					.modal-dialog{
+						transform: translate(0,0);
+					}
 				}
 			}
 		}

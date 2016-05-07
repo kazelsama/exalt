@@ -1,0 +1,33 @@
+[data-exalt~="carousel"]{
+	.carousel{
+		.carousel-indicators{
+			margin-bottom: 10px;
+			label{
+				@extend li;
+			}
+		}
+		.carousel-control{
+			display:none;
+		}
+	}
+	@for $index from 1 through $carousel-limit{
+		[type="radio"]:nth-child(#{$index}):checked{
+			~ .carousel{
+				.carousel-indicators{
+					label:nth-child(#{$index}){
+						@extend .active;
+					}
+				}
+				.carousel-inner{
+					.item:nth-child(#{$index}){
+						@extend .active;
+					}
+				}
+				[data-slide="prev"][for="carousel#{if($index>1,$index - 1,$carousel-limit)}"],
+				[data-slide="next"][for="carousel#{if($index<$carousel-limit,$index + 1,1)}"]{
+					display:block;
+				}
+			}
+		}
+	}
+}

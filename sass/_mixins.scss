@@ -1,0 +1,7 @@
+@function concat($strings...){
+	$return:"";
+	@each $string in $strings {
+		$return:$return + unquote($string);
+	}
+	@return $return;
+}

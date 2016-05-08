@@ -6,11 +6,31 @@
 				@extend li;
 			}
 		}
+		.carousel-inner{
+			z-index: 0;
+			.item{
+				transition:transform .6s linear;
+				position:absolute;
+				bottom:0;
+				width:100%;
+				display:block;
+				transform:translateX(-100%);
+				z-index:0;
+			}
+		}
 		.carousel-control{
 			display:none;
+			margin:0;
+			z-index: 1;
 		}
 	}
 	@for $index from 1 through $carousel-limit{
+		.carousel-inner{
+			.item:nth-child(#{$index}){
+				//transform:translateX(#{100 * ($index - 1)}%);
+				//left:100%;
+			}
+		}
 		[type="radio"]:nth-child(#{$index}):checked{
 			~ .carousel{
 				.carousel-indicators{
@@ -18,14 +38,67 @@
 						@extend .active;
 					}
 				}
-				.carousel-inner{
+				//.carousel-inner{
+					//transform:translateX($shift);
+					.item:first-child{
+						//margin-left:#{-100 * ($index - 1)}%;
+					}
+					.item:#{if($index - 1 > 0,nth-child(#{$index - 1}),last-child)}{
+						transform:translateX(-100%);
+						z-index:1;
+						//@extend .active;
+					}
 					.item:nth-child(#{$index}){
-						@extend .active;
+						transform:translateX(0%);
+						z-index:2;
+						//transition:transform .6s linear,z-index .01s linear .6s;
+						//@extend .active;
+					}
+					.item:#{if($index + 1 > $carousel-limit,first-child,nth-child(#{$index + 1}))}{
+						transform:translateX(100%);
+						//transition:none;
+						z-index:0;
+						//@extend .active;
+					}
+				//}
+				.carousel-control{
+					&[for="carousel#{if($index>1,$index - 1,$carousel-limit)}"]{
+						display:block;
+						@extend .left;
+						.glyphicon{
+							@extend .glyphicon-chevron-left;
+						}
+						&:hover ~ .carousel-inner{
+							//.item:#{if($index - 1 > 0,nth-child(#{$index - 1}),last-child)}{
+							//	//transform:translateX(-100%);
+							//	z-index:1;
+							//	//@extend .active;
+							//}
+							//.item:nth-child(#{$index}){
+							//	z-index:2;
+							//}
+							.item:#{if($index + 1 > $carousel-limit,first-child,nth-child(#{$index + 1}))}{
+								//transition:transform .6s linear,z-index .01s linear .6s;
+
+								transform:translateX(-100%);
+								transition:none;
+							}
+						}
+					}
+					&[for="carousel#{if($index<$carousel-limit,$index + 1,1)}"]{
+						display:block;
+						@extend .right;
+						.glyphicon{
+							@extend .glyphicon-chevron-right;
+						}
 					}
 				}
-				[data-slide="prev"][for="carousel#{if($index>1,$index - 1,$carousel-limit)}"],
-				[data-slide="next"][for="carousel#{if($index<$carousel-limit,$index + 1,1)}"]{
-					display:block;
+				&.slide{
+					.carousel-inner{
+						.item:nth-child(#{$index}){
+							position:relative;
+						}
+					}
 				}
 			}
 		}

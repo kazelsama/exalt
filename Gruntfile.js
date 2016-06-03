@@ -5,6 +5,7 @@ module.exports = function(grunt){
 	require('load-grunt-tasks')(grunt);
 	
 	var sassTree = require('sass-tree');
+	var nodeSass = require('grunt-sass/node_modules/node-sass');
 	
 	var config = {
 		watch:{
@@ -12,7 +13,12 @@ module.exports = function(grunt){
 		},
 		sass:{
 			options:{
-				sourceMap:true
+				sourceMap:true,
+				functions:{
+					"font-url($path,$true)":function($path,$true){
+						return new nodeSass.types.String('node_modules/bootstrap-sass/assets/fonts/bootstrap');
+					}
+				}
 			}
 		},
 		postcss:{
